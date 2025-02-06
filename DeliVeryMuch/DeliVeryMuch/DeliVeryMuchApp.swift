@@ -11,7 +11,7 @@ import SwiftUI
 struct DeliVeryMuchApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DeliVeryMuchTabView()
         }
     }
 }
