@@ -28,38 +28,9 @@ struct ProductDetailView: View {
                     .padding()
                 
                 HStack(spacing: 40) {
-                    VStack(spacing: 5) {
-                        Text("Calories")
-                            .bold()
-                            .font(.caption)
-                        
-                        Text("\(product?.calories ?? 0)")
-                            .foregroundStyle(.secondary)
-                            .fontWeight(.semibold)
-                            .italic()
-                    }
-                    
-                    VStack(spacing: 5) {
-                        Text("Carbs")
-                            .bold()
-                            .font(.caption)
-                        
-                        Text("\(product?.carbs ?? 0)")
-                            .foregroundStyle(.secondary)
-                            .fontWeight(.semibold)
-                            .italic()
-                    }
-                    
-                    VStack(spacing: 5) {
-                        Text("Protein")
-                            .bold()
-                            .font(.caption)
-                        
-                        Text("\(product?.protein ?? 0)")
-                            .foregroundStyle(.secondary)
-                            .fontWeight(.semibold)
-                            .italic()
-                    }
+                    NutritionInfoView(title: "Calories", value: product?.calories ?? 0)
+                    NutritionInfoView(title: "Carbs", value: product?.carbs ?? 0)
+                    NutritionInfoView(title: "Protein", value: product?.protein ?? 0)
                 }
             }
             
@@ -68,13 +39,7 @@ struct ProductDetailView: View {
             Button {
                 print("Added to cart")
             } label: {
-                Text("$\(product?.price ?? 0.0, specifier: "%.2f") - Add to order")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .frame(width: 260, height: 50)
-                    .foregroundStyle(.white)
-                    .background(.brandPrimary)
-                    .cornerRadius(10)
+                PriceButton(title: "$\(product?.price ?? 0.0, specifier: "%.2f") - Add to order")
             }
             .padding(.bottom, 25)
         }
@@ -85,12 +50,7 @@ struct ProductDetailView: View {
         .overlay(Button {
             product = nil
         } label: {
-            Image(systemName: "xmark.circle.fill")
-                .imageScale(.large)
-                .frame(width: 40, height: 40)
-                .padding(5)
-                .tint(.gray)
-                .opacity(0.6)
+            XDismissButton()
         }, alignment: .topTrailing)
     }
 }

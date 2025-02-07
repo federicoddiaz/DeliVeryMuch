@@ -10,7 +10,6 @@ import SwiftUI
 struct ProductsListView: View {
     
     @StateObject private var viewModel = ProductsListViewModel()
-    @State private var selectedProduct: Product?
     
     var body: some View {
         ZStack {
@@ -18,19 +17,19 @@ struct ProductsListView: View {
                 List(viewModel.products) { product in
                     ProductListCellView(product: product)
                         .onTapGesture {
-                            selectedProduct = product
+                            viewModel.selectedProduct = product
                         }
                 }
                 .navigationTitle("🍔 Products")
-                .disabled(selectedProduct != nil)
+                .disabled(viewModel.selectedProduct != nil)
             }
             .onAppear {
                 viewModel.getProducts()
             }
-            .blur(radius: selectedProduct != nil ? 10 : 0)
+            .blur(radius: viewModel.selectedProduct != nil ? 10 : 0)
             
-            if selectedProduct != nil {
-                ProductDetailView(product: $selectedProduct)
+            if viewModel.selectedProduct != nil {
+                ProductDetailView(product: $viewModel.selectedProduct)
             }
             
             if viewModel.isLoading {
