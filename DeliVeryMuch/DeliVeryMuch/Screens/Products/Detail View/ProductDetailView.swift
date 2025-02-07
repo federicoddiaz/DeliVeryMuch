@@ -9,20 +9,20 @@ import SwiftUI
 
 struct ProductDetailView: View {
     
-    let product: Product
+    @Binding var product: Product?
     
     var body: some View {
         VStack {
-            ProductRemoteImage(urlString: product.imageURL)
+            ProductRemoteImage(urlString: product?.imageURL ?? "")
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 300, height: 225)
             
             VStack {
-                Text(product.name)
+                Text(product?.name ?? "")
                     .font(.title2)
                     .fontWeight(.semibold)
                 
-                Text(product.description)
+                Text(product?.description ?? "")
                     .font(.body)
                     .multilineTextAlignment(.center)
                     .padding()
@@ -33,7 +33,7 @@ struct ProductDetailView: View {
                             .bold()
                             .font(.caption)
                         
-                        Text("\(product.calories)")
+                        Text("\(product?.calories ?? 0)")
                             .foregroundStyle(.secondary)
                             .fontWeight(.semibold)
                             .italic()
@@ -44,7 +44,7 @@ struct ProductDetailView: View {
                             .bold()
                             .font(.caption)
                         
-                        Text("\(product.carbs)")
+                        Text("\(product?.carbs ?? 0)")
                             .foregroundStyle(.secondary)
                             .fontWeight(.semibold)
                             .italic()
@@ -55,7 +55,7 @@ struct ProductDetailView: View {
                             .bold()
                             .font(.caption)
                         
-                        Text("\(product.protein)")
+                        Text("\(product?.protein ?? 0)")
                             .foregroundStyle(.secondary)
                             .fontWeight(.semibold)
                             .italic()
@@ -68,7 +68,7 @@ struct ProductDetailView: View {
             Button {
                 print("Added to cart")
             } label: {
-                Text("$\(product.price, specifier: "%.2f") - Add to order")
+                Text("$\(product?.price ?? 0.0, specifier: "%.2f") - Add to order")
                     .font(.title3)
                     .fontWeight(.semibold)
                     .frame(width: 260, height: 50)
@@ -83,7 +83,7 @@ struct ProductDetailView: View {
         .cornerRadius(12)
         .shadow(radius: 40)
         .overlay(Button {
-            
+            product = nil
         } label: {
             Image(systemName: "xmark.circle.fill")
                 .imageScale(.large)
@@ -96,5 +96,5 @@ struct ProductDetailView: View {
 }
 
 #Preview {
-    ProductDetailView(product: MockData.sampleProduct)
+    ProductDetailView(product: .constant(MockData.sampleProduct))
 }
