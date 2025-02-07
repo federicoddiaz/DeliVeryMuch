@@ -28,7 +28,7 @@ struct DeliVeryMuchTabView: View {
                     Text("Account")
                 }
         }
-        .tint(Color("brandPrimary"))
+        .tint(.brandPrimary)
     }
 }
 
