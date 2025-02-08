@@ -16,11 +16,20 @@ struct ProductsListView: View {
             NavigationStack {
                 List(viewModel.products) { product in
                     ProductListCellView(product: product)
+                        .onTapGesture {
+                            viewModel.selectedProduct = product
+                        }
                 }
                 .navigationTitle("🍔 Products")
+                .disabled(viewModel.selectedProduct != nil)
             }
             .onAppear {
                 viewModel.getProducts()
+            }
+            .blur(radius: viewModel.selectedProduct != nil ? 10 : 0)
+            
+            if viewModel.selectedProduct != nil {
+                ProductDetailView(product: $viewModel.selectedProduct)
             }
             
             if viewModel.isLoading {
