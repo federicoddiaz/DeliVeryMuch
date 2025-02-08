@@ -7,10 +7,10 @@
 import Foundation
 
 struct User: Codable {
-    var firstName       = ""
-    var lastName        = ""
-    var email           = ""
-    var dateOfBirth     = Date()
-    var extraNapkins    = false
-    var frequentRefills = false
+    var firstName              = ""
+    var lastName               = ""
+    var email                  = ""
+    var dateOfBirth            = Date()
+    var discountsNotifications = false
+    var couponsNotifications   = false
 }
