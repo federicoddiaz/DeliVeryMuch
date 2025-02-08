@@ -33,10 +33,10 @@ struct AccountView: View {
                 }
                 
                 Section {
-                    Toggle("Extra Napkings", isOn: $viewModel.user.extraNapkins)
-                    Toggle("Frequent Refills", isOn: $viewModel.user.frequentRefills)
+                    Toggle("Discounts", isOn: $viewModel.user.discountsNotifications)
+                    Toggle("Coupons", isOn: $viewModel.user.couponsNotifications)
                 } header: {
-                    Text("User Preferences")
+                    Text("Push Notifications")
                 }
                 
             }
