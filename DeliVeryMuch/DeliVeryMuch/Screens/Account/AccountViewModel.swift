@@ -54,3 +54,7 @@ final class AccountViewModel: ObservableObject {
         }
     }
 }
+
+enum FormTextField {
+    case firstName, lastName, email
+}

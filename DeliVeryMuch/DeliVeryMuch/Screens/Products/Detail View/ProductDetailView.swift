@@ -44,8 +44,9 @@ struct ProductDetailView: View {
                 
                 self.product = nil
             } label: {
-                PriceButton(title: "$\(product?.price ?? 0.0, specifier: "%.2f") - Add to order")
+                Text("$\(product?.price ?? 0.0, specifier: "%.2f") - Add to order")
             }
+            .modifier(StandardButtonStyle())
             .padding(.bottom, 25)
         }
         .frame(width: 300, height: 525)
