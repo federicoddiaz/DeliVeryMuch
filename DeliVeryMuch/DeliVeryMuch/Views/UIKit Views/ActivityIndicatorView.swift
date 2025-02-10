@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//UIActivityIndicatorView no longer needed. Left here to show how can I mix SwiftUI with UIKit.
 struct ActivityIndicatorView: UIViewRepresentable {
     func makeUIView(context: Context) -> UIActivityIndicatorView {
         let activityIndicatorView = UIActivityIndicatorView(style: .large)
@@ -24,7 +25,13 @@ struct LoadingView: View {
             Color(.systemBackground)
                 .edgesIgnoringSafeArea(.all)
             
-            ActivityIndicatorView()
+            // I was calling ActivityIndicatorView here to show it.
+            //ActivityIndicatorView()
+            
+            ProgressView()
+                .progressViewStyle(.circular)
+                .tint(.brandPrimary)
+                .scaleEffect(2)
         }
     }
 }
