@@ -17,38 +17,19 @@ final class NetworkManager {
     
     private init() {}
     
-    func getProducts(completed: @escaping (Result<[Product], DeliVeryError>) -> Void) {
+    func getProducts() async throws -> [Product] {
         guard let url = URL(string: productsURL) else {
-            completed(.failure(.invalidURL))
-            return
+            throw DeliVeryError.invalidURL
         }
         
-        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
-            if let _ = error {
-                completed(.failure(.unableToComplete))
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                completed(.failure(.invalidResponse))
-                return
-            }
-            
-            guard let data = data else {
-                completed(.failure(.invalidData))
-                return
-            }
-            
-            do {
-                let decoder = JSONDecoder()
-                let decodedResponse = try decoder.decode(ProductResponse.self, from: data)
-                completed(.success(decodedResponse.request))
-            } catch {
-                completed(.failure(.invalidData))
-            }
-        }
+        let (data, _) = try await URLSession.shared.data(from: url)
         
-        task.resume()
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(ProductResponse.self, from: data).request
+        } catch {
+            throw DeliVeryError.invalidData
+        }
     }
     
     func downloadImage(fromURLString urlString: String, completed: @escaping (UIImage?) -> Void) {

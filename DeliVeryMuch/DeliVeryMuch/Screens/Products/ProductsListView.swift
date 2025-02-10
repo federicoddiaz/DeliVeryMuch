@@ -25,8 +25,8 @@ struct ProductsListView: View {
                 .listStyle(.plain)
                 .disabled(viewModel.selectedProduct != nil)
             }
-            .onAppear {
-                viewModel.getProducts()
+            .task {
+                await viewModel.getProducts()
             }
             .blur(radius: viewModel.selectedProduct != nil ? 10 : 0)
             
