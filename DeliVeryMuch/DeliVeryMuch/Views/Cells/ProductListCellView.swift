@@ -13,10 +13,14 @@ struct ProductListCellView: View {
     
     var body: some View {
         HStack {
-            ProductRemoteImage(urlString: product.imageURL)
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 120, height: 90)
-                .cornerRadius(8)
+            AsyncImage(url: URL(string: product.imageURL)) { image in
+                image
+                    .cellImageModifier()
+                    
+            } placeholder: {
+                Image("food-placeholder")
+                    .cellImageModifier()
+            }
             
             VStack(alignment: .leading, spacing: 5) {
                 Text(product.name)

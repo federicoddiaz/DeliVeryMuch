@@ -7,42 +7,38 @@
 
 import SwiftUI
 
-final class ProductsListViewModel: ObservableObject {
+@MainActor final class ProductsListViewModel: ObservableObject {
     
     @Published var products: [Product] = []
     @Published var alertItem: AlertItem?
     @Published var isLoading: Bool = false
     @Published var selectedProduct: Product?
     
-    func getProducts() {
+    func getProducts() async {
         isLoading = true
-        NetworkManager.shared.getProducts { result in
-            DispatchQueue.main.async { [self] in
+        
+        Task {
+            do {
+                products = try await NetworkManager.shared.getProducts()
+                isLoading = false
+            } catch {
                 
-                self.isLoading = false
-                
-                switch result {
-                case .success(let products):
-                    self.products = products
-                    
-                case .failure(let error):
-                    switch error {
-                    case .invalidResponse:
-                        alertItem = AlertContext.invalidResponse
-                        
+                if let deliveryError = error as? DeliVeryError {
+                    switch deliveryError {
                     case .invalidURL:
                         alertItem = AlertContext.invalidURL
-                        
+                    case .invalidResponse:
+                        alertItem = AlertContext.invalidResponse
                     case .invalidData:
                         alertItem = AlertContext.invalidData
-                        
                     case .unableToComplete:
                         alertItem = AlertContext.unableToComplete
-                        
                     }
+                } else {
+                    alertItem = AlertContext.invalidResponse
                 }
+                isLoading = false
             }
         }
     }
-    
 }
