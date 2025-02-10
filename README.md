@@ -1,2 +1,2 @@
 # DeliVeryMuch
-Personal small menu app project to show how I code in Swift using SwiftUI, MVVM, etc.
+Small menu app personal project to show how I code in Swift using SwiftUI, MVVM, etc.
