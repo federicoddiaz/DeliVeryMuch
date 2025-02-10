@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProductDetailView: View {
     
+    @EnvironmentObject var order: Order
     @Binding var product: Product?
     
     var body: some View {
@@ -37,7 +38,11 @@ struct ProductDetailView: View {
             Spacer()
             
             Button {
-                print("Added to cart")
+                guard let product else { return }
+                
+                order.add(product)
+                
+                self.product = nil
             } label: {
                 PriceButton(title: "$\(product?.price ?? 0.0, specifier: "%.2f") - Add to order")
             }
