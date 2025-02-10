@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct DeliVeryMuchApp: App {
+    
+    var order = Order()
+    
     var body: some Scene {
         WindowGroup {
-            DeliVeryMuchTabView()
+            DeliVeryMuchTabView().environmentObject(order)
         }
     }
 }
