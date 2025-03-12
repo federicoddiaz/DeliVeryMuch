@@ -29,9 +29,9 @@ struct ProductDetailView: View {
                     .padding()
                 
                 HStack(spacing: 40) {
-                    NutritionInfoView(title: "Calories", value: product?.calories ?? 0)
-                    NutritionInfoView(title: "Carbs", value: product?.carbs ?? 0)
-                    NutritionInfoView(title: "Protein", value: product?.protein ?? 0)
+                    NutritionInfoView(title: "Calories", value: "\(product?.calories ?? 0)")
+                    NutritionInfoView(title: "Carbs", value: "\(product?.carbs ?? 0)g")
+                    NutritionInfoView(title: "Protein", value: "\(product?.protein ?? 0)g")
                 }
             }
             
@@ -44,8 +44,9 @@ struct ProductDetailView: View {
                 
                 self.product = nil
             } label: {
-                PriceButton(title: "$\(product?.price ?? 0.0, specifier: "%.2f") - Add to order")
+                Text("$\(product?.price ?? 0.0, specifier: "%.2f") - Add to order")
             }
+            .modifier(StandardButtonStyle())
             .padding(.bottom, 25)
         }
         .frame(width: 300, height: 525)
