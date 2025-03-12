@@ -29,9 +29,9 @@ struct ProductDetailView: View {
                     .padding()
                 
                 HStack(spacing: 40) {
-                    NutritionInfoView(title: "Calories", value: product?.calories ?? 0)
-                    NutritionInfoView(title: "Carbs", value: product?.carbs ?? 0)
-                    NutritionInfoView(title: "Protein", value: product?.protein ?? 0)
+                    NutritionInfoView(title: "Calories", value: "\(product?.calories ?? 0)")
+                    NutritionInfoView(title: "Carbs", value: "\(product?.carbs ?? 0)g")
+                    NutritionInfoView(title: "Protein", value: "\(product?.protein ?? 0)g")
                 }
             }
             
