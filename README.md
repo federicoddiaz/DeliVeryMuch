@@ -16,7 +16,7 @@ Dark Mode
 
 Light Mode
 
-![IMG_8506](https://github.com/user-attachments/assets/fc4f087f-acfd-4354-9342-a1d885881ad8)
-![IMG_8507](https://github.com/user-attachments/assets/1226e52c-3b59-4a85-8fbd-ecba71c2f975)
 ![IMG_8508](https://github.com/user-attachments/assets/e482f129-6d9e-40b8-8f52-8003661c93f5)
 ![IMG_8509](https://github.com/user-attachments/assets/0a8dfc1c-3a9d-412e-afdd-d9876d6ba41c)
+![IMG_8507](https://github.com/user-attachments/assets/1226e52c-3b59-4a85-8fbd-ecba71c2f975)
+![IMG_8506](https://github.com/user-attachments/assets/fc4f087f-acfd-4354-9342-a1d885881ad8)
