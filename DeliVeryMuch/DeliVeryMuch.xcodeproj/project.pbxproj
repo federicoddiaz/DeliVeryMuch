@@ -6,11 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		F441DD442D82135A00F312AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F49758F72D553F630075F8A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F49758FE2D553F630075F8A6;
+			remoteInfo = DeliVeryMuch;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		F441DD402D82135A00F312AD /* DeliVeryMuchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeliVeryMuchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F49758FF2D553F630075F8A6 /* DeliVeryMuch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeliVeryMuch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		F441DD412D82135A00F312AD /* DeliVeryMuchTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = DeliVeryMuchTests;
+			sourceTree = "<group>";
+		};
 		F49759012D553F630075F8A6 /* DeliVeryMuch */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = DeliVeryMuch;
@@ -19,6 +35,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F441DD3D2D82135A00F312AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F49758FC2D553F630075F8A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				F49759012D553F630075F8A6 /* DeliVeryMuch */,
+				F441DD412D82135A00F312AD /* DeliVeryMuchTests */,
 				F49759002D553F630075F8A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				F49758FF2D553F630075F8A6 /* DeliVeryMuch.app */,
+				F441DD402D82135A00F312AD /* DeliVeryMuchTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +73,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F441DD3F2D82135A00F312AD /* DeliVeryMuchTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F441DD482D82135A00F312AD /* Build configuration list for PBXNativeTarget "DeliVeryMuchTests" */;
+			buildPhases = (
+				F441DD3C2D82135A00F312AD /* Sources */,
+				F441DD3D2D82135A00F312AD /* Frameworks */,
+				F441DD3E2D82135A00F312AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F441DD452D82135A00F312AD /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				F441DD412D82135A00F312AD /* DeliVeryMuchTests */,
+			);
+			name = DeliVeryMuchTests;
+			packageProductDependencies = (
+			);
+			productName = DeliVeryMuchTests;
+			productReference = F441DD402D82135A00F312AD /* DeliVeryMuchTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		F49758FE2D553F630075F8A6 /* DeliVeryMuch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F497590D2D553F650075F8A6 /* Build configuration list for PBXNativeTarget "DeliVeryMuch" */;
@@ -80,6 +128,10 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					F441DD3F2D82135A00F312AD = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = F49758FE2D553F630075F8A6;
+					};
 					F49758FE2D553F630075F8A6 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -100,11 +152,19 @@
 			projectRoot = "";
 			targets = (
 				F49758FE2D553F630075F8A6 /* DeliVeryMuch */,
+				F441DD3F2D82135A00F312AD /* DeliVeryMuchTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F441DD3E2D82135A00F312AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F49758FD2D553F630075F8A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +175,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F441DD3C2D82135A00F312AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F49758FB2D553F630075F8A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,7 +191,51 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F441DD452D82135A00F312AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F49758FE2D553F630075F8A6 /* DeliVeryMuch */;
+			targetProxy = F441DD442D82135A00F312AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		F441DD462D82135A00F312AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GYYDUBLJ3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fdiaz.DeliVeryMuchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeliVeryMuch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DeliVeryMuch";
+			};
+			name = Debug;
+		};
+		F441DD472D82135A00F312AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GYYDUBLJ3;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = fdiaz.DeliVeryMuchTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DeliVeryMuch.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DeliVeryMuch";
+			};
+			name = Release;
+		};
 		F497590B2D553F650075F8A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -313,6 +424,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F441DD482D82135A00F312AD /* Build configuration list for PBXNativeTarget "DeliVeryMuchTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F441DD462D82135A00F312AD /* Debug */,
+				F441DD472D82135A00F312AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F49758FA2D553F630075F8A6 /* Build configuration list for PBXProject "DeliVeryMuch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

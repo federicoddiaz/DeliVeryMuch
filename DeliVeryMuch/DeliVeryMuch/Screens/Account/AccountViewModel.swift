@@ -24,7 +24,7 @@ final class AccountViewModel: ObservableObject {
             return false
         }
         
-        guard user.dateOfBirth <= Date() else {
+        guard user.dateOfBirth <= Date().eighteenYearsAgo else {
             alertItem = AlertContext.invalidDateOfBirth
             return false
         }
